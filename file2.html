@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Number</title>
+</head>
+<body>
+
+<form action="#" id="main_form">
+    <input type="number" id="number1" placeholder="Enter a number">
+    <br><br>
+    <button type="button" onclick="checkNumber();">Check</button>
+    <p id="result"></p>
+</form>
+
+<script>
+    function checkNumber() {
+        var x = parseInt(document.getElementById("number1").value);
+        var result = document.getElementById("result");
+
+        if (isNaN(x)) {
+            result.textContent = "Please enter a valid number.";
+            result.style.color = "red";
+            return;
+        }
+
+        if (x % 2 === 0) {
+            result.textContent = x + " is an even number.";
+            result.style.color = "green";
+        } else {
+            result.textContent = x + " is an odd number.";
+            result.style.color = "blue";
+        }
+    }
+</script>
+
+</body>
+</html>
